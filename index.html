@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template</title>
+  <link rel="icon" type="image/png" href="https://www.google.com/s2/u/0/favicons?domain=css-tricks.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="heading">
+    <h1>Multi-Date Calculator</h1>
+    <p>Get the number of days between various dates in the past or present.  Default primary date is today or enter any date to compare with unlimited events.  Simply enter name of event and date to get the days between.</p>
+  </div>
+  
+  <div id="formsContainer">
+    <div class="formWrapper">
+      <h3>Select Primary Date</h3>
+      <form id="primaryForm" onsubmit="event.preventDefault(); processPrimaryForm();">
+  
+      <label for="date">Select Date:</label>
+      <input type="date" id="primaryDate" name="primaryDate" required><br>
+      <button type="submit" class="formButton">Submit</button>
+      </form>
+    </div>
+  
+    <div class="formWrapper">
+      <h3>Add Events and Dates</h3>
+      <form id="eventsForm" onsubmit="event.preventDefault(); processEventsForm();">
+        <label for="date">Select Date:</label>
+        <input type="date" id="date" name="date" required><br>
+  
+        <label for="event">Event Name:</label>
+        <input type="text" id="event" name="event" placeholder="Enter Event Name" required><br>
+  
+        <button type="submit" class="formButton">Submit</button>
+      </form>
+    </div>
+      
+  </div>
+  
+  <div id="primaryWrapper">
+  <h3>Primary Date: <span id="displayPrimary">Enter Primary Date</span></h3>
+  </div>
+  
+  
+  <div class="itemsContainer">
+    <table id="itemsTable">
+      <thead>
+        <tr>
+          <th>Event</th>
+          <th>Date</th>
+          <th>Days</th>
+        </tr>
+      </thead>
+      <tbody id="itemsTBody">
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
